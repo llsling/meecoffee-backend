@@ -15,11 +15,11 @@ let pool;
       port: 5432,
       user: "postgres",
       password: "yMCsV76xe2g@+wt",
-      database: "meecoffee",
+      database: "postgre",
       ssl: { rejectUnauthorized: false },
       statement_timeout: 10000,
     });
-    console.log("PostgreSQL pool created with IPv4");
+    console.log("PostgreSQL pool created");
   } catch (err) {
     console.error("Failed to resolve Supabase host:", err);
   }
