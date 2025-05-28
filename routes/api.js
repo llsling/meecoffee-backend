@@ -10,6 +10,7 @@ const pool = new Pool({
   database: "meecoffee",
   port: 5432,
   ssl: { rejectUnauthorized: false },
+  statement_timeout: 10000,
 });
 
 // 測試用
