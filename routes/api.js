@@ -11,14 +11,21 @@ let pool;
       family: 4,
     });
     pool = new Pool({
-      host: resolved.address,
-      port: 5432,
-      user: "postgres",
-      password: "yMCsV76xe2g@+wt",
-      database: "postgre",
+      connectionString:
+        "postgresql://postgres.rgypfenexbzbgzctfgsg:yMCsV76xe2g@+wt@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres",
       ssl: { rejectUnauthorized: false },
       statement_timeout: 10000,
     });
+
+    // pool = new Pool({
+    //   host: resolved.address,
+    //   port: 5432,
+    //   user: "postgres",
+    //   password: "yMCsV76xe2g@+wt",
+    //   database: "postgre",
+    //   ssl: { rejectUnauthorized: false },
+    //   statement_timeout: 10000,
+    // });
     console.log("PostgreSQL pool created");
   } catch (err) {
     console.error("Failed to resolve Supabase host:", err);
