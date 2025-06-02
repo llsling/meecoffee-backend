@@ -10,12 +10,15 @@ let pool;
     const resolved = await dns.lookup("db.rgypfenexbzbgzctfgsg.supabase.co", {
       family: 4,
     });
-    pool = new Pool({
+
+    const { Pool } = require("pg");
+    const pool = new Pool({
       connectionString:
-        "postgresql://postgres.rgypfenexbzbgzctfgsg:yMCsV76xe2g@+wt@aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres",
+        "postgresql://postgres.rgypfenexbzbgzctfgsg:yMCsV76xe2g@+wt@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres",
       ssl: { rejectUnauthorized: false },
       statement_timeout: 10000,
     });
+    module.exports = pool;
 
     // pool = new Pool({
     //   host: resolved.address,
