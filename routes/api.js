@@ -3,8 +3,7 @@ const router = express.Router();
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString:
-    "postgresql://postgres.rgypfenexbzbgzctfgsg:yMCsV76xe2g@+wt@aws-0-ap-southeast-1.pooler.supabase.com:6543/postgres",
+  connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
   statement_timeout: 10000,
 });
