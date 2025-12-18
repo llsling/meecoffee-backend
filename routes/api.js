@@ -10,7 +10,6 @@ const pool = new Pool({
   port: 6543,
   ssl: { rejectUnauthorized: false },
 });
-
 // const pool = new Pool({
 //   connectionString: process.env.DATABASE_URL,
 //   ssl: { rejectUnauthorized: false },
