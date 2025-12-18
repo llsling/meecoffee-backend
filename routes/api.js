@@ -3,10 +3,19 @@ const router = express.Router();
 const { Pool } = require("pg");
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: "aws-1-ap-southeast-2.pooler.supabase.com",
+  user: "postgres.slkudvvhwkjdiqphbmbo",
+  password: process.env.DB_PASSWORD,
+  database: "postgres",
+  port: 6543,
   ssl: { rejectUnauthorized: false },
-  statement_timeout: 10000,
 });
+
+// const pool = new Pool({
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: { rejectUnauthorized: false },
+//   statement_timeout: 10000,
+// });
 console.log("PostgreSQL pool created");
 
 // 測試用
