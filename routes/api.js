@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Pool } = require("pg");
+const authRoutes = require("./auth.routes");
 
 const pool = new Pool({
   host: "aws-1-ap-southeast-2.pooler.supabase.com",
@@ -54,4 +55,6 @@ router.get("/kinds", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+router.use("/auth", authRoutes);
+
 module.exports = router;
